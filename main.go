@@ -269,6 +269,8 @@ func streamResponse(cfg config, systemPrompt, question string, m mode) (string, 
 	var renderer *termRenderer
 	if m == modeExplain {
 		renderer = &termRenderer{}
+	} else {
+		fmt.Print("\n    " + ansiDim)
 	}
 
 	scanner := bufio.NewScanner(resp.Body)
@@ -299,13 +301,15 @@ func streamResponse(cfg config, systemPrompt, question string, m mode) (string, 
 			if renderer != nil {
 				renderer.write(text)
 			} else {
-				fmt.Print(text)
+				fmt.Print(strings.ReplaceAll(text, "\n", "\n    "))
 			}
 		}
 	}
 
 	if renderer != nil {
 		renderer.close()
+	} else {
+		fmt.Print(ansiReset + "\n")
 	}
 
 	return strings.TrimSpace(full.String()), nil
