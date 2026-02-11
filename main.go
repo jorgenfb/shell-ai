@@ -316,11 +316,10 @@ func streamResponse(cfg config, systemPrompt, question string, m mode) (string, 
 }
 
 func confirm() bool {
-	fmt.Print("Execute? [y/N] ")
+	fmt.Print("Execute? ")
 	reader := bufio.NewReader(os.Stdin)
-	answer, _ := reader.ReadString('\n')
-	answer = strings.TrimSpace(strings.ToLower(answer))
-	return answer == "y" || answer == "yes"
+	reader.ReadString('\n')
+	return true
 }
 
 func execute(command string) {
