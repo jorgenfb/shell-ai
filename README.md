@@ -20,7 +20,7 @@ mkdir -p ~/.config/shell-ai
 echo 'api_key = "YOUR_GEMINI_API_KEY"' > ~/.config/shell-ai/config.toml
 ```
 
-Optional config: `model = "gemini-2.0-flash"` (default).
+Optional config: `model = "gemini-flash-lite-latest"` (default).
 
 ## Examples
 

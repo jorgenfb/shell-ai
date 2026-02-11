@@ -197,7 +197,7 @@ func loadConfig() (config, error) {
 	}
 	defer f.Close()
 
-	cfg := config{Model: "gemini-2.0-flash"}
+	cfg := config{Model: "gemini-flash-lite-latest"}
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
