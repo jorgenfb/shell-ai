@@ -14,13 +14,16 @@ shell-ai [--explain | --confirm | --yolo] <question...>
 
 ## Setup
 
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/apikey) (no billing required)
+2. Build and configure:
+
 ```bash
 go build -o shell-ai .
 mkdir -p ~/.config/shell-ai
 echo 'api_key = "YOUR_GEMINI_API_KEY"' > ~/.config/shell-ai/config.toml
 ```
 
-Optional config: `model = "gemini-flash-lite-latest"` (default).
+The default model (`gemini-flash-lite-latest`) works with free API keys. Optional config: `model = "gemini-flash-lite-latest"` (default).
 
 ## Examples
 
